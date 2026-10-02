@@ -1,0 +1,37 @@
+/**
+ * The starter's block: a notice. Its saved HTML is plain (a heading and a line), styled by
+ * style.scss, which WordPress loads only on pages that use the block.
+ */
+import { registerBlockType } from '@wordpress/blocks';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+
+import metadata from './block.json';
+import './style.scss';
+
+type Attributes = { heading: string; text: string };
+
+registerBlockType< Attributes >( metadata as never, {
+	edit: ( { attributes, setAttributes } ) => (
+		<div { ...useBlockProps( { className: 'pbs-starter-notice' } ) }>
+			<RichText
+				tagName="strong"
+				placeholder={ __( 'Heading', 'pbs-starter-addon' ) }
+				value={ attributes.heading }
+				onChange={ ( heading: string ) => setAttributes( { heading } ) }
+			/>
+			<RichText
+				tagName="span"
+				placeholder={ __( 'A line of text', 'pbs-starter-addon' ) }
+				value={ attributes.text }
+				onChange={ ( text: string ) => setAttributes( { text } ) }
+			/>
+		</div>
+	),
+	save: ( { attributes } ) => (
+		<div { ...useBlockProps.save( { className: 'pbs-starter-notice' } ) }>
+			<RichText.Content tagName="strong" value={ attributes.heading } />
+			<RichText.Content tagName="span" value={ attributes.text } />
+		</div>
+	),
+} );

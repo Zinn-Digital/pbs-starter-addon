@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs-starter/notice",
+	"title": "Starter notice",
+	"description": "A coloured notice with a heading and a line of text (PBS Starter Add-on).",
+	"textdomain": "pbs-starter-addon",
+	"attributes": {
+		"heading": { "type": "string", "source": "html", "selector": "strong", "default": "" },
+		"text": { "type": "string", "source": "html", "selector": "span", "default": "" }
+	},
+	"supports": { "html": false },
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

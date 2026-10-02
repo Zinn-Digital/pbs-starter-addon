@@ -1,0 +1,9 @@
+.pbs-starter-notice {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25em;
+	padding-block: 1em;
+	padding-inline: 1.25em;
+	border-inline-start: 4px solid currentColor;
+	background: color-mix(in srgb, currentColor 8%, transparent);
+}
