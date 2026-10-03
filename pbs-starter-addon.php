@@ -24,8 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action(
 	'init',
 	static function (): void {
-		// The builder is not active (or older than 6.32): this add-on does nothing. (No "Requires
-		// Plugins" header: Page Builder Sandwich Pro installs under another folder name.)
+		// The builder is not active (or older than 6.34): this add-on does nothing. There is no
+		// "Requires Plugins" header, because Page Builder Sandwich Pro installs under another folder name.
 		if ( ! function_exists( 'pbsw_register_block' ) ) {
 			return;
 		}
