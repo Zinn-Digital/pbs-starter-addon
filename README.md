@@ -11,7 +11,7 @@ It adds one of everything an add-on can add:
 | A "Greeting" dynamic data source for headings, paragraphs and buttons (Pro) | `pbsw_register_dynamic_source()` |
 | A "Weekday" display condition for templates and blocks (Pro) | `pbsw_register_condition()` |
 | A form action that keeps a log of submissions (Pro form builder) | `pbsw_register_form_action()` |
-| A panel on the builder's admin screen, typed with [`@zinn-digital/pbs-types`](https://www.npmjs.com/package/@zinn-digital/pbs-types) | the `pbs.admin.panels` filter |
+| A panel on the builder's admin screen, typed with [`@zinn-digital/pbs-types`](https://www.npmjs.com/package/@zinn-digital/pbs-types) | the `pbsw.admin.panels` filter |
 
 ```sh
 npm install

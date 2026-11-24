@@ -1,6 +1,6 @@
 /**
  * A panel on Page Builder Sandwich's admin screen, typed with @zinn-digital/pbs-types: it lists
- * what add-ons registered (GET /pbs/v1/extensions).
+ * what add-ons registered (GET /pbsw/v1/extensions).
  */
 import { addFilter } from '@wordpress/hooks';
 import { useEffect, useState } from '@wordpress/element';
@@ -11,7 +11,7 @@ import type { PbsFilters, ExtensionsResponse } from '@zinn-digital/pbs-types';
 function ExtensionsPanel() {
 	const [ ext, setExt ] = useState< ExtensionsResponse | null >( null );
 	useEffect( () => {
-		apiFetch< ExtensionsResponse >( { path: '/pbs/v1/extensions' } ).then( setExt );
+		apiFetch< ExtensionsResponse >( { path: '/pbsw/v1/extensions' } ).then( setExt );
 	}, [] );
 	if ( ! ext ) {
 		return null;
@@ -28,9 +28,9 @@ function ExtensionsPanel() {
 }
 
 addFilter(
-	'pbs.admin.panels',
+	'pbsw.admin.panels',
 	'pbs-starter/extensions',
-	( list: PbsFilters[ 'pbs.admin.panels' ] ): PbsFilters[ 'pbs.admin.panels' ] => [
+	( list: PbsFilters[ 'pbsw.admin.panels' ] ): PbsFilters[ 'pbsw.admin.panels' ] => [
 		...list,
 		{ name: 'pbs-starter-extensions', Component: ExtensionsPanel },
 	]
